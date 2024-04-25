@@ -27,13 +27,18 @@ const ageDecrement = () => {
 const isQualified = computed(() => {
   return person.age > 18 ? "Qualified" : "Not Qualified";
 });
+
+// Use method instead of computed
+function isQualifiedFun() {
+  return person.age > 18 ? "Qualified" : "Not Qualified";
+}
 </script>
 
 <template>
   <h2>Name is {{ person.name }}</h2>
   <h2>Age is {{ person.age }}</h2>
   <h2>
-    You are <span>{{ isQualified }}</span>
+    You are <span>{{ isQualifiedFun() }}</span>
   </h2>
   <button @click="ageIncrement">Increase Age</button>
   <button @click="ageDecrement">Decrement Age</button>
